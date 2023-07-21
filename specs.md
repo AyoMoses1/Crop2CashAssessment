@@ -24,11 +24,11 @@ POST /farmers
 
 ```json
 {
-  "first_name": "John",
-  "last_name": "Doe",
+  "first_name": "Ayo",
+  "last_name": "Moses",
   "phone_number": "08123456789",
-  "age": 35,
-  "address": "123 Main St, City",
+  "age": 27,
+  "address": "Aduloju, Ibadan, Oyo State",
   "crops": "maize,beans"
 }
 ```
@@ -37,13 +37,8 @@ POST /farmers
 
 ```json
 {
-  "id": 1,
-  "first_name": "John",
-  "last_name": "Doe",
-  "phone_number": "08123456789",
-  "age": 35,
-  "address": "123 Main St, City",
-  "crops": "maize,beans"
+    "status": "success",
+    "message": "Farmer with id: 12 has been created successfully!!!"
 }
 ```
 
@@ -57,9 +52,13 @@ GET /farmers
 
 ### Query Parameters 🧾
 
-- `fields`: (optional) Comma-separated list of attributes to return. Example: `fields=first_name,last_name,age`.
+- `fields`: (optional) Comma-separated list of attributes to return. Example: fields=first_name,last_name,age.
 
-- `filter`: (optional) JSON object used for filtering. It can contain one or more attributes to filter by. Example: `filter={"crops": "maize"}`.
+- `first_name`: (optional) Filter farmers by their first name. Example: first_name=Ayo.
+
+- `min_age and max_age`: (optional) Filter farmers by age range. Example: min_age=20&max_age=50.
+
+
 
 ### Sample Query Endpoints 🔎
 
