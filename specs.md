@@ -1,9 +1,11 @@
 🌽 Farmer API Specification 🚜
 
 # Introduction 🌟
+
 Welcome to the Farmer API 🌽🚜! This API allows you to manage Farmer entities with various attributes like `id`, `first_name`, `last_name`, `phone_number`, `age`, `address`, and `crops`. The API provides a single insertion endpoint to create a new farmer and a single retrieval endpoint to fetch farmer data with filter functionality.
 
 ## Base URL 🏠
+
 ```
 http://localhost:3000
 ```
@@ -11,6 +13,7 @@ http://localhost:3000
 # Endpoints 🛣️
 
 ## Create Farmer 🌾
+
 Create a new farmer object using a `POST` request to the following endpoint:
 
 ```
@@ -18,6 +21,7 @@ POST /farmers
 ```
 
 ### Sample Request Payload 📦
+
 ```json
 {
   "first_name": "John",
@@ -30,6 +34,7 @@ POST /farmers
 ```
 
 ### Sample Response 🔄
+
 ```json
 {
   "id": 1,
@@ -43,6 +48,7 @@ POST /farmers
 ```
 
 ## Get Farmers 🚜
+
 Retrieve farmers' data with optional filtering using a `GET` request to the following endpoint:
 
 ```
@@ -57,24 +63,10 @@ GET /farmers
 
 ### Sample Query Endpoints 🔎
 
-1. Retrieve all farmers with their `id`, `first_name`, and `crops`:
-```
-GET /farmers?fields=id,first_name,crops
-```
+1. Retrieve only the `ids` and `ages` of farmers:
 
-2. Retrieve all farmers with the first name "John":
 ```
-GET /farmers?fields=first_name&filter={"first_name": "John"}
-```
-
-3. Retrieve farmers with age between 20 and 50:
-```
-GET /farmers?fields=age&filter={"age": [20, 50]}
-```
-
-4. Retrieve farmers who sell "maize":
-```
-GET /farmers?fields=crops&filter={"crops": "maize"}
+GET /farmers?fields=id,age
 ```
 
 ### Sample Response 🔄
@@ -83,17 +75,94 @@ GET /farmers?fields=crops&filter={"crops": "maize"}
 [
   {
     "id": 1,
-    "first_name": "John",
-    "last_name": "Doe",
-    "age": 35,
-    "crops": "maize,beans"
+    "age": 35
   },
   {
     "id": 2,
-    "first_name": "Jane",
-    "last_name": "Smith",
-    "age": 40,
-    "crops": "maize,cassava"
+    "age": 27
+  },
+  {
+    "id": 3,
+    "age": 24
+  },
+  {
+    "id": 4,
+    "age": 25
+  }
+]
+```
+
+2. Retrieve all farmers with the first name "Jimoh":
+
+```
+GET /farmers?fields=first_name&first_name=Jimoh
+```
+
+### Sample Response 🔄
+
+```json
+[
+  {
+    "first_name": "Jimoh"
+  },
+  {
+    "first_name": "Jimoh"
+  },
+  {
+    "first_name": "Jimoh"
+  }
+]
+```
+
+3. Retrieve farmers with age between 20 and 50:
+
+```
+
+GET /farmers?fields=first_name,age&first_name=Jimoh&min_age=20&max_age=50
+
+```
+
+### Sample Response 🔄
+
+```json
+[
+  {
+    "first_name": "Jimoh",
+    "age": 27
+  },
+  {
+    "first_name": "Jimoh",
+    "age": 35
+  }
+]
+```
+
+4. Retrieve ages of farmers that sell maize:
+
+```
+
+GET /farmers?fields=crops,age&crops=maize
+```
+
+### Sample Response 🔄
+
+```json
+[
+  {
+    "crops": "maize, rice",
+    "age": 35
+  },
+  {
+    "crops": "maize, rice",
+    "age": 27
+  },
+  {
+    "crops": "Beans, Garri, Ewedu, rice, maize",
+    "age": 35
+  },
+  {
+    "crops": "cassava, rice, maize",
+    "age": 35
   }
 ]
 ```
@@ -101,6 +170,7 @@ GET /farmers?fields=crops&filter={"crops": "maize"}
 # Error Handling 🚫
 
 - If there is an error creating or retrieving farmers, the API will respond with an error message like:
+
 ```json
 {
   "error": "Failed to create a farmer"

@@ -47,7 +47,7 @@ app.post("/farmers", async (req, res) => {
 
 // Retrieval endpoint
 app.get('/farmers', async (req, res) => {
-  const { fields, ...filters } = req.query;
+  const { fields, min_age, max_age, ...filters } = req.query;
   console.log(filters, "filters");
 
   let sql = 'SELECT ';
@@ -61,9 +61,20 @@ app.get('/farmers', async (req, res) => {
   sql += ' FROM farmers';
 
   const filterKeys = Object.keys(filters);
-  if (filterKeys.length > 0) {
+  if (filterKeys.length > 0 || min_age || max_age) {
     sql += ' WHERE';
     let isFirstFilter = true;
+
+    if (min_age && max_age) {
+      sql += ` age BETWEEN ${min_age} AND ${max_age}`;
+      isFirstFilter = false;
+    } else if (min_age) {
+      sql += ` age >= ${min_age}`;
+      isFirstFilter = false;
+    } else if (max_age) {
+      sql += ` age <= ${max_age}`;
+      isFirstFilter = false;
+    }
 
     filterKeys.forEach((filterKey) => {
       const filterValue = filters[filterKey];
@@ -71,13 +82,7 @@ app.get('/farmers', async (req, res) => {
         sql += ' AND';
       }
 
-      if (filterKey === 'age') {
-        if (Array.isArray(filterValue)) {
-          sql += ` age BETWEEN ${filterValue[0]} AND ${filterValue[1]}`;
-        } else {
-          sql += ` age = ${filterValue}`;
-        }
-      } else if (filterKey === 'crops') {
+      if (filterKey === 'crops') {
         sql += ` crops LIKE '%${filterValue}%'`;
       } else {
         sql += ` ${filterKey} = '${filterValue}'`;
@@ -95,7 +100,6 @@ app.get('/farmers', async (req, res) => {
     res.status(500).json({ error: 'Failed to retrieve farmers' });
   }
 });
-
 
 
 app.listen(port, () => {
