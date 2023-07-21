@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="assets/farmersa.png" alt="logo" width="140"  height="auto" />
+  <img src="assets/farmersa.jpg" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>The Farmers API</b></h3>
