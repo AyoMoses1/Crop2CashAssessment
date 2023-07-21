@@ -1,17 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { Pool } = require("pg");
+const dotenv = require('dotenv');
 
+
+dotenv.config({ path: './config.env' });
 const app = express();
 const port = 3000; // Choose any port you prefer
 
 // Database connection
 const pool = new Pool({
-  user: "postgres",
-  password: "postgres",
-  host: "localhost",
-  port: 5432, // Default PostgreSQL port
-  database: "farmers_db",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DATABASE,
 });
 
 // Middleware

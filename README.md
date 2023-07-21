@@ -1,6 +1,57 @@
-🌱 Farmer API - Setup Instructions 🚀
+<a name="readme-top"></a>
+
+<div align="center">
+
+  <img src="assets/farmersa.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+  <h3><b>The Farmers API</b></h3>
+
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
+
+
+# 📖 🌱 Farmer API - Setup Instructions 🚀 <a name="about-project"></a>
 
 Welcome to the Farmer API 🌽🚜! This guide will walk you through the setup process for the project. The Farmer API allows you to manage Farmer entities with attributes like `id`, `first_name`, `last_name`, `phone_number`, `age`, `address`, and `crops`. It provides a single insertion endpoint to create a new farmer and a single retrieval endpoint with filter functionality.
+
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="#">Node JS</a></li>
+    <li><a href="#">PostgreSQL</a></li>
+  </ul>
+</details>
+
+
+## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites 📋
 
@@ -71,3 +122,42 @@ The API provides error handling for various scenarios, and in case of an error, 
 ### Conclusion 🏁
 
 Congratulations! You have successfully set up the Farmer API 🌽🚜. You can now start creating and retrieving farmers using the provided endpoints. If you encounter any issues or have questions, don't hesitate to ask for help. Enjoy farming and happy coding! 🌾🚀🌟
+
+
+
+## 👥 Author <a name="authors"></a>
+
+👤 **AyoMoses**
+
+- GitHub: [@AyoMoses1](https://github.com/AyoMoses1)
+- Twitter: [@Ayo_Moses1](https://twitter.com/Ayo_Moses1)
+- LinkedIn: [Ayo Moses](https://www.linkedin.com/in/ayo-moses-493946184/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project please give it a star and share it with your freinds 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to appreciate [Crop2Cash](https://www.crop2cash.com.ng/) for the assessment email I received regarding the Software Engineering role at Crop2Cash. I am thrilled to have the opportunity to showcase my skills and qualifications further.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
