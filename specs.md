@@ -1,4 +1,4 @@
-🌽 Farmer API Specification 🚜
+<h1>🌽 Farmer API Specification 🚜</h1>
 
 # Introduction 🌟
 
