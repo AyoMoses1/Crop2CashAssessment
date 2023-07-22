@@ -27,7 +27,6 @@ exports.createFarmer = async (req, res) => {
       ]
     );
 
-    console.log("Inserted farmer with ID:", result.rows[0].id);
     res.status(201).json({
       status: "success",
       message: `Farmer with id: ${result.rows[0].id} has been created successfully!!!`,
