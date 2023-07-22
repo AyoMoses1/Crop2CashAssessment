@@ -71,14 +71,14 @@ Before you begin, make sure you have the following installed on your machine:
 
    - Create a PostgreSQL database and note down the connection details (host, port, username, password, and database name).
 
-   - Create a `.env` file in the root of the project and add the following environment variables:
+   - Create a `config.env` file in the root of the project and add the following environment variables:
 
      ```
-     PG_HOST=your_database_host
-     PG_PORT=your_database_port
-     PG_USER=your_database_username
-     PG_PASSWORD=your_database_password
-     PG_DATABASE=your_database_name
+     HOST=your_database_host
+     DB_PORT=your_database_port
+     DB_USER=your_database_username
+     DB_PASSWORD=your_database_password
+     DATABASE=your_database_name
      ```
 
 4. Run the database schema setup script:
